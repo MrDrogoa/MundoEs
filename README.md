@@ -81,3 +81,33 @@ Si quieres, puedo hacer ahora:
 - o crear un PR separado con commits limpios (por ejemplo: separar footer changes + hero changes en commits distintos).
 
  Dime qué prefieres y lo implemento.
+
+## Cambios realizados hoy (resumen)
+
+Hoy realizaste varios cambios y mejoras en el frontend; los incluyo aquí para dejar un registro claro y reproducible:
+
+- Navegación dinámica:
+	- `src/components/navbar/ListNav.vue` — convertido para generar los items desde un array `navItems` en `<script setup>` y renderizar con `v-for` (reduce duplicación HTML).
+	- `src/components/navbar/FooterNav.vue` — convertido igualmente a `navItems` + `v-for` para generar los enlaces del footer fijo.
+
+- Footer y layout:
+	- `src/components/Footer.vue` — ajustes para centrar el grupo de columnas como un bloque en pantallas grandes (se añadió `justify-center` en el contenedor), y cada columna tiene anchura fija en `lg` (`lg:w-56`) para que el conjunto quede centrado; los títulos dentro de cada columna permanecen left-aligned.
+	- El footer mantiene sus datos dinámicos dentro de su `<script setup>` (como solicitaste), y los enlaces internos usan `RouterLink` mientras que los externos usan `<a href>`.
+
+- Emergency cards (nuevo componente):
+	- `src/components/main/Emergency.vue` — nuevo componente con 4 tarjetas de emergencia (Carabineros, Bomberos, SAMU, PDI). Implementadas con Tailwind y flexbox, cada tarjeta muestra icono (FontAwesome), número y botón `tel:`.
+	- La tarjeta de Bomberos se resaltó con borde amarillo (prop `highlight`) para simular el diseño de la imagen que compartiste.
+
+- Font Awesome / main:
+	- `src/main.js` — se importaron y registraron iconos adicionales necesarios para `Emergency.vue`: `faFire`, `faAmbulance`, `faPhone` (añadidos a la librería global para uso en componentes).
+
+- Limpieza y verificación
+	- Ejecutaste comprobaciones de errores en los archivos modificados (`Footer.vue`, `ListNav.vue`, `FooterNav.vue`, `Emergency.vue`, `main.js`) y no se encontraron errores de compilación en los archivos editados.
+
+Si quieres que lo haga por ti, puedo además:
+
+- Mover los arrays `navItems` a `src/data/nav.js` y reusar la misma fuente para `ListNav` y `FooterNav`.
+- Mover los datos del `Footer` a `src/data/footerData.js` si prefieres centralizar.
+- Hacer commit con un mensaje claro y hacer push al repositorio remoto.
+
+Dime si quieres que haga el commit/push ahora y qué mensaje prefieres para el commit.

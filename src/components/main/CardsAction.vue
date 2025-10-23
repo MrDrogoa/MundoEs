@@ -32,8 +32,14 @@ const items = ref([
 <template>
   <section class="py-12 max-w-[1200px] mx-auto">
     <!-- Titulo de la sección -->
-    <h3 class="text-xl text-center font-semibold">¿Por qué elegirnos?</h3>
-    <p class="text-sm text-center text-gray-500 mt-2">
+    <h3
+      class="text-center text-[#0B1620] text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold"
+    >
+      ¿Por qué elegirnos?
+    </h3>
+    <p
+      class="text-sm lg:text-base text-center text-gray-500 py-3 lg:py-7 w-72 lg:w-96 mx-auto"
+    >
       Ofrecemos la mejor experiencia de reserva con tecnología moderna y
       atención personalizada
     </p>

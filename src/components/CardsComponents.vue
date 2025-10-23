@@ -36,7 +36,9 @@ const cards = [
 <template>
   <section class="cards px-4 py-6">
     <div class="max-w-[1200px] mx-auto">
-      <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
+      <h3
+        class="text-[#0B1620] text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-4 py-3 md:py-5 text-center lg:text-start"
+      >
         🏆 Hospedajes Premium
       </h3>
 

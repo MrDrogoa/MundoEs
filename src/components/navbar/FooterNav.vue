@@ -1,4 +1,16 @@
-<script setup></script>
+<script setup>
+const navItems = [
+  { text: "Explorar", to: "/", icon: "search", color: "text-[#919191]" },
+  { text: "Favoritos", to: "/favorite", icon: "star", color: "text-[#ffd900]" },
+  {
+    text: "Seguridad",
+    to: "/emergency",
+    icon: "exclamation-triangle",
+    color: "text-[#ff0000]",
+  },
+  { text: "Perfil", to: "/profile", icon: "user", color: "text-[#0066ff]" },
+];
+</script>
 
 <template>
   <nav
@@ -6,40 +18,13 @@
   >
     <div class="max-w-[1200px] mx-auto px-5 md:px-4 lg:px-3 xl:px-0">
       <ul class="flex gap-3 justify-between py-3">
-        <!-- Lista de navegación -->
-        <li>
-          <router-link to="/" class="flex flex-col items-center">
-            <font-awesome-icon icon="search" class="text-[#919191]" />
-            <span class="text-sm sm:text-base font-medium text-[#3a3a3a]"
-              >Explorar</span
-            >
-          </router-link>
-        </li>
-        <li>
-          <router-link to="/favorite" class="flex flex-col items-center">
-            <font-awesome-icon icon="star" class="text-[#ffd900]" />
-            <span class="text-sm sm:text-base font-medium text-[#3a3a3a]"
-              >Favoritos</span
-            >
-          </router-link>
-        </li>
-        <li>
-          <router-link to="/profile" class="flex flex-col items-center">
-            <font-awesome-icon
-              icon="exclamation-triangle"
-              class="text-[#ff0000]"
-            />
-            <span class="text-sm sm:text-base font-medium text-[#3a3a3a]"
-              >Seguridad</span
-            >
-          </router-link>
-        </li>
-        <li>
-          <router-link to="/seguridad" class="flex flex-col items-center">
-            <font-awesome-icon icon="user" class="text-[#0066ff]" />
-            <span class="text-sm sm:text-base font-medium text-[#3a3a3a]"
-              >Perfil</span
-            >
+        <!-- Lista de navegación generada dinámicamente -->
+        <li v-for="(item, idx) in navItems" :key="item.text + idx">
+          <router-link :to="item.to" class="flex flex-col items-center">
+            <font-awesome-icon :icon="item.icon" :class="item.color" />
+            <span class="text-sm sm:text-base font-medium text-[#3a3a3a]">
+              {{ item.text }}
+            </span>
           </router-link>
         </li>
       </ul>

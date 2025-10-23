@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "@/views/HomeView.vue";
 import TodoView from "@/views/TodoView.vue";
+import EmergencyView from "@/views/EmergencyView.vue";
 
 // Definición de rutas
 const routes = [
@@ -12,13 +13,20 @@ const routes = [
       title: "Inicio - MundoEscort",
     },
   },
-
   {
     path: "/todo",
     name: "Todo",
     component: TodoView,
     meta: {
       title: "Todo - MundoEscort",
+    },
+  },
+  {
+    path: "/emergency",
+    name: "Emergency",
+    component: EmergencyView,
+    meta: {
+      title: "Emergencia - MundoEscort",
     },
   },
 ];
