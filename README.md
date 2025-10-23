@@ -1,5 +1,83 @@
-# Vue 3 + Vite
+# FrontendME (MundoEs)
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Proyecto Vue 3 + Vite creado como base para la interfaz de MundoEs. A continuación se documenta, de forma cronológica y práctica, todo lo que hiciste desde que montaste el proyecto: decisiones técnicas, archivos añadidos/actualizados, y cómo ejecutar y depurar localmente.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Resumen técnico
+- Framework: Vue 3 (script setup)
+- Bundler/dev server: Vite
+- Estilado: Tailwind CSS (utilidades)
+- Rutas: Vue Router
+- Iconos: Font Awesome (integrado en `main.js`)
+- Gestor de paquetes: pnpm (lockfile: `pnpm-lock.yaml`)
+
+## Historia de cambios (cronológica — acciones realizadas por ti)
+1. Inicialización del proyecto con Vite + Vue 3 (plantilla base).  
+2. Creación de la estructura principal en `src/` con componentes y layout:
+	- `src/layout/Layouts.vue` — layout principal con Header y Footer (slot / RouterView como patrón discutido).
+	- `src/App.vue`, `src/main.js`, `vite.config.js` — configuración y bootstrap del app; registro global de Font Awesome.
+3. Implementación del Header y navegaciones:
+	- `src/components/Header.vue`, `src/components/navbar/*` — logo, lista de navegación y botones. Se agregó lógica responsive (hamburger) y uso de `font-awesome-icon`.
+4. Integración de Font Awesome:
+	- Instalaste e importaste los paquetes `@fortawesome/*` y registraste `FontAwesomeIcon` en `main.js`.
+5. Hero y formularios:
+	- Componentes `src/components/hero/*` implementados: `Heroimg.vue`, `HeroContent.vue`, `HeroForm.vue` con diseño responsive.
+6. Tarjetas y acciones:
+	- Componentes `src/components/CardsComponents.vue` y `src/components/main/CardsAction.vue` (tarjetas con igual altura, responsive con flexbox).
+7. Footer dinámico y responsive:
+	- `src/components/Footer.vue` convertido para usar datos dinámicos dentro del propio `<script setup>`.
+	- Enlaces internos usan `<router-link>` (a través de `RouterLink`) y los externos usan `<a href>`.
+	- Botón flotante de WhatsApp con `href` dinámico.
+	- Ajustes responsivos: 3 columnas en lg, 2 en sm/md y 1 en móvil.
+8. Limpieza y commits:
+	- Añadiste nuevos componentes (`ActionCardsComponents.vue`, `CardsComponents.vue`, `src/components/main/CardsAction.vue`) y realizaste commits.
+	- Empujaste los cambios a GitHub (`origin/main`).
+
+## Archivos añadidos / modificados (clave)
+- `src/components/Footer.vue` — ahora contiene datos reactivos (`footer`) y renderiza secciones dinámicamente. Usa `attrsFor(link)` para normalizar `to` vs `href`.
+- `src/components/Header.vue` — navegación responsive y logo.
+- `src/components/hero/*` — hero image, content y form.
+- `src/components/CardsComponents.vue` & `src/components/main/CardsAction.vue` — tarjetas responsive con igual altura.
+- `src/main.js` — bootstrap del app y registro de Font Awesome.
+- `vite.config.js` — alias `@` configurado hacia `./src`.
+
+## Cómo ejecutar localmente
+Requisitos: Node.js (recomendado v18+), pnpm instalado globalmente.
+
+1. Instalar dependencias (desde el root `FrontendME`):
+
+```bash
+pnpm install
+```
+
+2. Levantar el servidor de desarrollo:
+
+```bash
+pnpm run dev
+```
+
+3. Abrir el navegador en la URL que indique Vite (normalmente `http://localhost:5173`).
+
+4. Si haces cambios en componentes usa el Hot Reload de Vite; para revisar el historial de commits y confirmar los cambios en GitHub:
+
+```bash
+git log --oneline --decorate --graph -n 10
+```
+
+## Notas técnicas y recomendaciones
+- Router vs Layout: decidiste mantener los enlaces internos con `RouterLink`. Si prefieres que el `Layouts.vue` contenga `RouterView` directamente (para manejar distintos layouts) podemos refactorizar.
+- Datos dinámicos: el footer usa datos dentro del `<script setup>`; si deseas que esa información venga de un archivo compartido (`src/data/footerData.js`) o desde un CMS/API, lo podemos mover fácilmente.
+- Abrir rutas internas en nueva pestaña: `router-link` no soporta `target="_blank"` de forma nativa — si necesitas esa funcionalidad se puede generar la URL con `router.resolve()` y usar `<a href="...">`.
+- Tests y CI: sugerencia futura: añadir pruebas UI con Vitest + Testing Library y un workflow de GitHub Actions que construya y haga lint al push.
+
+## Cambios pendientes sugeridos (opcional)
+- Añadir un archivo `src/data/footerData.js` y consumirlo desde `Footer.vue` para reutilizar datos.  
+- Añadir validaciones y control de formulario en `HeroForm.vue` (v-model, validaciones).  
+- Añadir minified README con comandos rápidos y un `Makefile` o tasks de VS Code.
+
+---
+
+Si quieres, puedo hacer ahora:
+- mover los datos del footer a `src/data/footerData.js` y actualizar `Footer.vue` para importarlos;  
+- o crear un PR separado con commits limpios (por ejemplo: separar footer changes + hero changes en commits distintos).
+
+ Dime qué prefieres y lo implemento.
