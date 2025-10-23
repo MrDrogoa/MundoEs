@@ -14,7 +14,6 @@ import LogoNav from "@/components/navbar/LogoNav.vue";
         <LogoNav />
       </div>
       <!-- lista de navegación (oculta en md y menores, visible en lg) -->
-
       <ListNav />
 
       <!-- formulario de navegación (oculto en md y menores, visible en lg) -->

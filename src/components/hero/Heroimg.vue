@@ -6,7 +6,7 @@ import Heroimg from "@/assets/herohotel.webp";
   <section class="w-full px-5 md:px-0">
     <!-- responsive hero container: h-64 on small, h-96 on md, h-[520px] on lg -->
     <div
-      class="w-full h-64 md:h-96 lg:h-[520px] overflow-hidden relative shadow-2xl rounded-2xl md:rounded-none"
+      class="w-full h-64 md:h-96 lg:h-[520px] overflow-hidden relative shadow-none md:shadow-2xl rounded-2xl md:rounded-none"
     >
       <img
         :src="Heroimg"

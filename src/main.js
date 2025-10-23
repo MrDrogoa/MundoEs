@@ -14,11 +14,15 @@ import {
   faHotel,
   faMoneyBillWave,
   faBell,
+  faClock,
+  faComments,
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
+import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import {
   faSearch,
   faExclamationTriangle,
+  faShieldAlt,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -34,7 +38,11 @@ library.add(
   faSearch,
   faExclamationTriangle,
   faUser,
-  faGithub
+  faClock,
+  faShieldAlt,
+  faFilter,
+  faGithub,
+  faComments
 );
 
 const app = createApp(App);
