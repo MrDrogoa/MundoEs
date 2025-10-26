@@ -1,5 +1,6 @@
 <script setup>
 import sampleImg from "@/assets/herohotel.webp";
+import ButtonComponents from "@/components/ButtonComponents.vue";
 
 const cards = [
   {
@@ -70,11 +71,7 @@ const cards = [
               </div>
 
               <div class="mt-2">
-                <button
-                  class="w-full cursor-pointer bg-gradient-to-r from-[#c29224] via-[#d4af37] to-[#f5d36b] text-white py-2 px-4 rounded-md hover:from-[#eac95a] hover:via-[#cfa84a] hover:to-[#b8821f] transition-colors duration-300 font-medium text-sm md:text-base"
-                >
-                  Consultar
-                </button>
+                <ButtonComponents class="w-full">Consultar</ButtonComponents>
               </div>
             </div>
           </div>

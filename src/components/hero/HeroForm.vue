@@ -1,5 +1,6 @@
 <script setup>
 // no state yet; you can bind with v-model if needed
+import ButtonComponents from "../ButtonComponents.vue";
 </script>
 
 <template>
@@ -63,12 +64,7 @@
 
       <!-- Botón Buscar -->
       <div class="flex md:self-end items-center">
-        <button
-          type="submit"
-          class="cursor-pointer w-full md:w-40 bg-gradient-to-r from-[#c29224] via-[#d4af37] to-[#f5d36b] text-white py-2 md:py-3 px-4 md:px-6 rounded-md hover:from-[#eac95a] hover:via-[#cfa84a] hover:to-[#b8821f] transition-colors duration-300 font-medium text-sm md:text-base"
-        >
-          Buscar
-        </button>
+        <ButtonComponents class="w-full md:w-40">Buscar</ButtonComponents>
       </div>
 
       <!-- Secondary controls -->

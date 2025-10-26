@@ -16,6 +16,7 @@ import {
   faBell,
   faClock,
   faComments,
+  faArrowRight,
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
@@ -44,6 +45,7 @@ library.add(
   faExclamationTriangle,
   faUser,
   faClock,
+  faArrowRight,
   faShieldAlt,
   faFire,
   faAmbulance,

@@ -111,3 +111,28 @@ Si quieres que lo haga por ti, puedo además:
 - Hacer commit con un mensaje claro y hacer push al repositorio remoto.
 
 Dime si quieres que haga el commit/push ahora y qué mensaje prefieres para el commit.
+
+## Cambios recientes (incluye edits locales no guardados en GitHub)
+
+A continuación hay un resumen práctico de los cambios que hiciste hoy y de los cambios recientes que podrían no estar todavía en el remoto (útil antes de hacer push):
+
+- Componentes nuevos / actualizados en `src/components/main`:
+	- `Emergency.vue` — nueva sección con 4 tarjetas de emergencia (Carabineros, Bomberos, SAMU, PDI) usando Tailwind + FontAwesome y botones `tel:`.
+	- `Protocolo.vue` — nuevo componente con pasos dinámicos del protocolo de emergencia (números, instrucciones) usando flexbox.
+	- `ContactEmergency.vue` — tarjeta con CTA a WhatsApp (dinámica, genera `https://wa.me/...`).
+	- `AllCards.vue` — nuevo conjunto de tarjetas dinámicas (Hospedajes, Agencias, Servicios, Favoritos, Perfil, Emergencia) con `router-link` para navegación interna.
+
+- Navegación y navbar:
+	- `src/components/navbar/ListNav.vue` — convertido a datos dinámicos (`navItems` + `v-for`).
+	- `src/components/navbar/FooterNav.vue` — convertido a datos dinámicos (`navItems` + `v-for`).
+
+- Footer / Layout:
+	- `src/components/Footer.vue` — ajustes para centrar el bloque de columnas y mantener títulos left-aligned; datos dinámicos dentro del componente.
+
+- Botón reutilizable:
+	- `src/components/ButtonComponents.vue` — convertido para usarse como componente-hijo sin props (usa slot) y acepta clases Tailwind desde el padre; mantiene re-emisión de `click`.
+	- Integración: `Emergency.vue` usa `ButtonComponents` dentro del `<a href="tel:...">` para mantener el CTA y aplicar el estilo del botón.
+
+- Font Awesome / main:
+	- `src/main.js` — añadiste iconos adicionales a la librería (ej. `faFire`, `faAmbulance`, `faPhone`, `faArrowRight`). Revisa la coma faltante si aparece un error de parseo.
+
