@@ -15,8 +15,13 @@
         <div
           class="w-full bg-green-600 hover:bg-green-700 text-white rounded-lg py-4 flex items-center justify-center gap-3 shadow-md"
         >
-          <font-awesome-icon icon="phone" class="text-white text-lg" />
-          <span class="text-lg font-medium">{{ contact.buttonText }}</span>
+          <font-awesome-icon
+            icon="phone"
+            class="text-white text-sm lg:text-lg"
+          />
+          <span class="text-sm lg:text-lg font-medium">{{
+            contact.buttonText
+          }}</span>
         </div>
       </a>
     </div>

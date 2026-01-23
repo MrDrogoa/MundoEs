@@ -81,7 +81,7 @@ function attrsFor(link) {
                 <component
                   :is="link.to ? RouterLink : 'a'"
                   v-bind="attrsFor(link)"
-                  class="hover:text-white transition-colors duration-150"
+                  class="hover:text-[#D4AF37] transition-colors duration-150"
                 >
                   {{ link.text }}
                 </component>
@@ -106,25 +106,9 @@ function attrsFor(link) {
       class="fixed right-6 bottom-6 z-50"
     >
       <div
-        class="w-14 h-14 bg-[#07c160] rounded-full flex items-center justify-center shadow-lg"
+        class="w-14 h-14 bg-[#07c160] rounded-full flex items-center justify-center"
       >
-        <!-- chat SVG -->
-        <svg
-          width="22"
-          height="22"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M20.52 3.48A11.93 11.93 0 0012 0C5.373 0 .01 4.693.01 10.5c0 1.848.49 3.588 1.42 5.14L0 24l8.74-2.29A11.947 11.947 0 0012 21c6.627 0 12-4.693 12-10.5 0-2.8-1.15-5.4-3.48-7.02z"
-            fill="#fff"
-          />
-          <path
-            d="M17.2 14.6c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15s-.77.97-.95 1.17c-.18.2-.36.22-.66.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.79-1.68-2.09-.18-.3-.02-.46.13-.61.13-.13.3-.36.45-.54.15-.18.2-.3.3-.5.1-.2 0-.37-.03-.52-.03-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.06 2.87 1.2 3.07c.14.2 2.08 3.17 5.04 4.44 2.96 1.27 2.96.85 3.5.8.54-.05 1.76-.72 2.01-1.41.25-.68.25-1.26.18-1.38-.07-.12-.27-.2-.57-.35z"
-            fill="#07c160"
-          />
-        </svg>
+        <font-awesome-icon icon="phone" />
       </div>
     </a>
   </footer>

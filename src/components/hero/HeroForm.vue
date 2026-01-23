@@ -5,85 +5,31 @@ import ButtonComponents from "../ButtonComponents.vue";
 
 <template>
   <div
-    class="hero-form mx-auto bg-white/5 backdrop-blur-md p-3 md:p-6 rounded-xl shadow-lg mt-6"
+    class="hero-form mx-auto bg-white/5 backdrop-blur-md p-3 md:p-6 rounded-xl lg:shadow-lg mt-6"
   >
-    <!-- Tabs -->
-    <div class="flex gap-3 mb-4">
-      <button class="px-4 py-2 rounded-md bg-[#c29224] text-white font-medium">
-        Por Destino
-      </button>
-      <button
-        class="px-4 py-2 rounded-md bg-white/20 md:text-white font-medium"
+    <!-- Simplified central search (matches mock) -->
+    <form class="flex flex-col items-center w-full">
+      <div
+        class="w-full max-w-3xl flex flex-col md:flex-row items-stretch bg-white rounded-full overflow-hidden shadow-md"
       >
-        Por Fechas
-      </button>
-      <button
-        class="px-4 py-2 rounded-md bg-white/20 md:text-white font-medium"
-      >
-        Por Huéspedes
-      </button>
-    </div>
-
-    <form class="flex flex-col md:flex-row md:flex-wrap gap-3 items-center">
-      <!-- Destino -->
-      <div class="w-full md:w-1/3">
-        <label
-          class="block text-xs text- md:text-white mb-2 font-medium text-start"
-          >Destino</label
-        >
+        <!-- Input: fills available space on desktop, full width on mobile -->
         <input
           type="text"
-          placeholder="¿A dónde viajas?"
-          class="w-full py-2 md:py-3 px-2 md:px-3 rounded-md border md:border-white/10 text-[#505050] md:text-white border-gray-300 bg-white/5 md:placeholder:text-white/60 focus:outline-none text-sm md:text-base"
+          placeholder="Escribe aqui tu ciudad"
+          class="w-full md:flex-1 py-4 px-6 text-gray-700 placeholder-gray-400 text-lg focus:outline-none bg-transparent"
         />
-      </div>
 
-      <!-- Entrada -->
-      <div class="w-full md:w-1/6">
-        <label class="block text-xs md:text-white mb-2 font-medium text-start"
-          >Entrada</label
+        <!-- Button: full width on mobile, auto on desktop; on desktop keep rounded right edge -->
+        <ButtonComponents
+          type="submit"
+          class="w-full md:w-auto md:px-6 md:py-3 rounded-none md:rounded-r-full hidden md:block"
         >
-        <input
-          type="text"
-          placeholder="dd-mm-aaaa"
-          class="w-full py-2 md:py-3 px-2 md:px-3 rounded-md border md:border-white/10 text-[#505050] md:text-white border-gray-300 bg-white/5 md:placeholder:text-white/60 focus:outline-none text-sm md:text-base"
-        />
+          Buscar hospedaje
+        </ButtonComponents>
       </div>
-
-      <!-- Salida -->
-      <div class="w-full md:w-1/6">
-        <label class="block text-xs md:text-white mb-2 font-medium text-start"
-          >Salida</label
-        >
-        <input
-          type="text"
-          placeholder="dd-mm-aaaa"
-          class="w-full py-2 md:py-3 px-2 md:px-3 rounded-md border md:border-white/10 text-[#505050] md:text-white border-gray-300 bg-white/5 md:placeholder:text-white/60 focus:outline-none text-sm md:text-base"
-        />
-      </div>
-
-      <!-- Botón Buscar -->
-      <div class="flex md:self-end items-center">
-        <ButtonComponents class="w-full md:w-40">Buscar</ButtonComponents>
-      </div>
-
-      <!-- Secondary controls -->
-      <div class="mt-2 flex gap-3 flex-wrap">
-        <button
-          type="button"
-          class="px-2 py-1 rounded-md bg-white/10 md:text-white text-sm flex items-center gap-2 font-medium"
-        >
-          <font-awesome-icon icon="user" />
-          <span>Huéspedes</span>
-        </button>
-        <button
-          type="button"
-          class="px-2 py-1 rounded-md bg-white/10 md:text-white text-sm flex items-center gap-2 font-medium"
-        >
-          <font-awesome-icon icon="filter" />
-          <span>Filtros</span>
-        </button>
-      </div>
+      <ButtonComponents class="w-50 block md:hidden mt-4">
+        Buscar hospedaje
+      </ButtonComponents>
     </form>
   </div>
 </template>

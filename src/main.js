@@ -16,20 +16,19 @@ import {
   faBell,
   faClock,
   faComments,
+  faArrowAltCircleLeft,
+  faArrowAltCircleRight,
   faArrowRight,
+  faArrowLeft,
   faStar,
-} from "@fortawesome/free-solid-svg-icons";
-import { faFilter } from "@fortawesome/free-solid-svg-icons";
-import {
   faSearch,
   faExclamationTriangle,
   faShieldAlt,
   faUser,
-} from "@fortawesome/free-solid-svg-icons";
-import {
   faFire,
   faAmbulance,
   faPhone,
+  faFilter,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
@@ -45,7 +44,10 @@ library.add(
   faExclamationTriangle,
   faUser,
   faClock,
+  faArrowAltCircleLeft,
+  faArrowAltCircleRight,
   faArrowRight,
+  faArrowLeft,
   faShieldAlt,
   faFire,
   faAmbulance,
