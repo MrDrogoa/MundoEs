@@ -1,16 +1,14 @@
 <script setup>
-import HeroComponents from "../components/HeroComponents.vue";
-import CardsComponents from "../components/CardsComponents.vue";
-import ActionCardsComponents from "../components/ActionCardsComponents.vue";
+import HeroComponents from "@/components/HeroComponents.vue";
+import MainComponents from "@/components/MainComponents.vue";
 </script>
 
 <template>
   <!-- Hero Section -->
-  <HeroComponents />
+  <hero-components />
+  <main-components />
   <!-- Cards Section -->
-  <CardsComponents />
   <!-- Action Cards Section -->
-  <ActionCardsComponents />
 </template>
 
 <style lang="scss" scoped></style>
